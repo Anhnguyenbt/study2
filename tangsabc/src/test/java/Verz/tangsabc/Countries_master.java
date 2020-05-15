@@ -55,17 +55,19 @@ public class Countries_master extends Base_Countries {
 		System.out.println(elementct1.getText());
 		assertTrue(elementct1.getText().contains("Country of Residence has been updated successfully."));
 		driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-light']")).click();
-		Thread.sleep(10000);
 		
+		//Thread.sleep(10000);
+		System.out.println("abc");
 	}
 // search country by name
-	 @Test(priority=3)
+	/* @Test(priority=3)
 	public void t_searchbyname() throws InterruptedException {
 
-driver.findElement(By.ByXPath.xpath("//input[@id='masterfiles-name']")).sendKeys("China169");
+    driver.findElement(By.ByXPath.xpath("//input[@id='masterfiles-name']")).sendKeys("China169");
 	driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-sm btn-primary']")).click();
-		
+		System.out.println("abc");
 	}
+	*/
 	
 	
 
