@@ -21,14 +21,16 @@ public class Base_Countries extends base {
 
 	driver.findElement(By.ByXPath.xpath("//*[@id=\"login-form\"]/div[4]/button")).click();
 
-	driver.findElement(By.ByXPath.xpath("//*[@id=\"app-container\"]/div/div[1]/div/ul/li[8]/a")).click();
-	 driver.findElement(By.ByXPath.xpath("//a[contains(text(),'Master')]")).click();
-	 driver.findElement(By.ByXPath.xpath("//span[contains(text(),'Countries')]")).click();
+    // driver.findElement(By.ByXPath.xpath("//*[@id=\"app-container\"]/nav/div[1]/a[1]/svg[2]")).click();
+	  
+	  driver.findElement(By.ByXPath.xpath("//a[contains(text(),'Master')]")).click();
+	 driver.findElement(By.ByXPath.xpath("//ul[2]//li[7]//a[1]")).click();
   }
 
 @AfterClass
 public void afterClass(){
 	driver.quit();
 } 
+
 
 }

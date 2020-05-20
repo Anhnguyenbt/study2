@@ -17,16 +17,18 @@ public class Countries_master extends Base_Countries {
 
 	@Test(priority=1)
 	public void t_createcountrie() throws InterruptedException {
+		Random rda = new Random();
+		int textnamea = rda.nextInt(1000);
 
 		driver.findElement(By.ByXPath.xpath("//a[@class='btn btn-primary default mb-1']")).click();
 		driver.findElement(By.ById.id("home-tab")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.ByXPath.xpath("//*[@id=\"masterfiles-name\"]")).sendKeys("Vietnam4");
+		driver.findElement(By.ByXPath.xpath("//*[@id=\"masterfiles-name\"]")).sendKeys("Vietnam4"+textnamea);
 		driver.findElement(By.ById.id("masterfiles-ordering")).sendKeys("20");
 		driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-primary']")).click();
 		Thread.sleep(2000);
 		WebElement elementct = (new WebDriverWait(driver, 10)).until(ExpectedConditions
-				.visibilityOfElementLocated(By.ByXPath.xpath("//*[@id=\"app-container\"]/main/div/div[3]")));
+				.visibilityOfElementLocated(By.ByXPath.xpath("//div[@class='alert alert-success']")));
 		System.out.println(elementct.getText());
 		assertTrue(elementct.getText().contains("Country of Residence has been created successfully."));
 		driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-light']")).click();
@@ -51,23 +53,24 @@ public class Countries_master extends Base_Countries {
 		driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-primary']")).click();
 		Thread.sleep(2000);
 		WebElement elementct1 = (new WebDriverWait(driver, 10)).until(ExpectedConditions
-				.visibilityOfElementLocated(By.ByXPath.xpath("//*[@id=\"app-container\"]/main/div/div[3]")));
+				.visibilityOfElementLocated(By.ByXPath.xpath("//div[@class='alert alert-success']")));
 		System.out.println(elementct1.getText());
 		assertTrue(elementct1.getText().contains("Country of Residence has been updated successfully."));
 		driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-light']")).click();
 		
-		//Thread.sleep(10000);
-		System.out.println("abc");
+		Thread.sleep(2000);
+		//System.out.println("abc");
 	}
-// search country by name
-	/* @Test(priority=3)
+	
+//search country by name
+	 @Test(priority=3)
 	public void t_searchbyname() throws InterruptedException {
 
-    driver.findElement(By.ByXPath.xpath("//input[@id='masterfiles-name']")).sendKeys("China169");
+    driver.findElement(By.ByXPath.xpath("//input[@id='masterfiles-name']")).sendKeys("Singapore");
 	driver.findElement(By.ByXPath.xpath("//button[@class='btn btn-sm btn-primary']")).click();
-		System.out.println("abc");
+		//System.out.println("abc");
 	}
-	*/
+	
 	
 	
 
